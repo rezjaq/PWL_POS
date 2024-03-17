@@ -11,8 +11,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = UserModel::with('level')->get();
-        return view('user', ['data' => $user]);
+        // $user = UserModel::with('level')->get();
+        // return view('user', ['data' => $user]);
 
         // $user = UserModel::all();
         // return view('user', ['data' => $user]);
@@ -72,6 +72,9 @@ class UserController extends Controller
 
         // $user = UserModel::where('username', 'manager9')->firstOrFail();
         // return view('user', ['data' => $user]);
+
+        $user = UserModel::where('level_id', 1)->firstOrFail();
+        return view('user', ['data' => $user]);
 
         // $user = UserModel::findOrFail(1);
         // return view('user', ['data' => $user]);
