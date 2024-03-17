@@ -26,6 +26,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Ubah</button>
+                <a href="{{ url('/kategori') }}" class="btn btn-secondary">Back</a>
             </div>
         </form>
     </div>

@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ url('/kategori') }}" class="btn btn-secondary">Back</a> <!-- Tambahkan tombol Back -->
+                        <a href="{{ url('/kategori') }}" class="btn btn-secondary">Back</a> 
                     </div>
                 </div>
             </form>
