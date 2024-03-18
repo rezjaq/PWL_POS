@@ -46,7 +46,7 @@
 @stop
  
 {{-- Rename section content to content_body --}} 
- 
+
 @section('content') 
     @yield('content_body') 
 @stop 

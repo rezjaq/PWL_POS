@@ -4,24 +4,6 @@
 @section('content_header_title', 'Home')
 @section('content_header_subtitle', 'Kategori')
 
-{{-- @section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <div class="d-flex justify-content-between align-items-center"> 
-                    <span>Manage Kategori</span>
-                    <a href="{{ url('/kategori/create') }}" class="btn btn-primary">Tambah Kategori</a> 
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive"> 
-                    {{ $dataTable->table(['class' => 'table table-bordered table-striped']) }} 
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection --}}
-
 @section('content')
     <div class="container">
         <div class="card">
