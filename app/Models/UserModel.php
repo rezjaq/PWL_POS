@@ -11,6 +11,7 @@ class UserModel extends Model
 {
     use HasFactory;
     protected $table = 'm_user';
+    public $timestamps = false;
     protected $primaryKey = 'user_id';
     /*
      *
@@ -18,6 +19,7 @@ class UserModel extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'level_id',
         'username',
         'nama',

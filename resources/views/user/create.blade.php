@@ -1,53 +1,65 @@
-{{-- @extends('layout.app')
+{{-- @extends('/user/template')
 
-@section('subtitle', 'kategori')
-@section('content_header_title', 'Kategori')
+@section('subtitle', 'User')
+@section('content_header_title', 'User')
 @section('content_header_subtitle', 'Create')
 
 @section('content')
     <div class="container">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Buat Kategori Baru</h3>
+                <h3 class="card-title">Tambah User Baru</h3>
             </div>
 
-            <form method="POST" action="../kategori">
+            <form method="POST" action="../user">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="kodeKategori">Kode Kategori</label>
-                        <input type="text" class="form-control @error('kategori_kode') is-invalid @enderror" id="kodeKategori" name="kategori_kode" placeholder="Kode Kategori">
-                        @error('kategori_kode')
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username">
+                        @error('username')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>
                     
                     <div class="form-group">
-                        <label for="kodeKategori">Nama Kategori</label>
-                        <input type="text" class="form-control" id="kodeKategori" name="kategori_nama" placeholder="Nama Kategori">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Nama">
+                        @error('nama')
+                            <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ url('/kategori') }}" class="btn btn-secondary">Back</a> 
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
+                        @error('password')
+                            <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
                     </div>
+
+                     <div class="form-group">
+                        <label for="level_id">Level</label>
+                        <select class="form-control @error('level_id') is-invalid @enderror" id="level_id" name="level_id">
+                            @foreach($levels as $level)
+                                <option value="{{$level->id}}">{{$level->level_nama}}</option>
+                            @endforeach
+                        </select>
+                        @error('level_id')
+                            <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="{{ url('/user') }}" class="btn btn-secondary">Back</a> 
                 </div>
             </form>
         </div>
     </div>
-@endsection
-
-@if ($errors->any)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-    
-@endif
- --}}
- @extends('layouts.app')
+@endsection --}}
+@extends('layout.app')
 
 @section('subtitle', 'Tambah User')
 @section('content_header_title', 'User')
@@ -56,7 +68,7 @@
 @section('content')
     <div class="row mb-3">
         <div class="col">
-            <a href="/m_user" class="btn btn-primary">Kembali</a>
+            <a href="/user" class="btn btn-primary">Kembali</a>
         </div>
     </div>
     
@@ -110,4 +122,3 @@
         </div>
     </div>
 @endsection
-

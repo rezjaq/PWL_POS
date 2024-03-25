@@ -317,14 +317,24 @@ return [
         ],
         ['header' => 'MENU'],
         [
-            'text' => 'User',
+            'text' => 'Dashboard',
             'url' => '/',
-            'icon' => 'fas fa-users mr-1',
+            'icon' => 'fas fa-tachometer-alt mr-1',
         ],
         [
             'text' => 'Kategori',
             'url' => 'kategori',
             'icon' => 'fa fa-boxes mr-1',
+        ],
+        [
+            'text' => 'User',
+            'url' => 'user',
+            'icon' => 'fa fa-users mr-1',
+        ],
+        [
+            'text' => 'Level',
+            'url' => 'level',
+            'icon' => 'fa fa-briefcase',
         ],
         // [
         //     'text' => 'pages',
