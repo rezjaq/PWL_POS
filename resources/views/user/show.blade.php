@@ -32,7 +32,7 @@
                     </tr>
                 </table>
             @endempty
-            <a href="{{url('user')}}" class="btn btn-sm btn-default mt-2">Kembali</a>
+            <a class="btn btn-secondary" href="{{url('user')}}">Kembali</a>
         </div>
     </div>
 @endsection

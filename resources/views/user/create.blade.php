@@ -182,8 +182,8 @@
                 <div class="form-group row">
                     <label class="col-1 control-label col-form-label"></label>
                     <div class="col-11">
-                       <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-                       <a class="btn btn-sm btn-default ml-1" href="{{url('user')}}"></a>
+                        <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                        <a class="btn btn-secondary" href="{{url('user')}}">Kembali</a>
                     </div>
                 </div>
                 </div>

@@ -95,7 +95,9 @@
         <div class="card-header">
             <h3 class="card-title">{{$page->title}}</h3>
             <div class="card-tools">
-                <a class="btn btn-sm btn-primary mt-1" href="{{url('user/create')}}">Tambah</a>
+                <a class="btn btn-sm btn-primary mt-1" href="{{url('user/create')}}">
+                    <i class="fas fa-plus-circle mr-1"></i> Tambah Pengguna
+                </a>                
             </div>
         </div>
         <div class="card-body">

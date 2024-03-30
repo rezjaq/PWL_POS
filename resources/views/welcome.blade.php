@@ -132,7 +132,7 @@
     </body>
 </html> --}}
 
-@extends( 'layout.app' )
+{{-- @extends( 'layout.app' )
 
 @section('subtitle', 'Welcome')
 @section('content_header_title', 'Home')
@@ -148,4 +148,20 @@
 
 @push( 'js' )
     <script> console.log("Hi, I'm using the Laravel-AdminLTE package");</script>
-@endpush
+@endpush --}}
+
+@extends('layout.template')
+
+@section('content')
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Halo, apakabar!!!</h3>
+        <div class="card-tools"></div>
+    </div>
+    <div class="card-body">
+        Selamat Datang Semua, ini adalah halaman utama dari aplikasi ini
+    </div>
+</div>
+
+@endsection
