@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\PenjualanController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Level;
 
@@ -24,9 +25,9 @@ use Monolog\Level;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// Route::get('/', function () {
-//     return view('blog.template');
-// });
+Route::get('/', function () {
+    return view('blog.template');
+});
 
 //Level
 // Route::get('/level', [LevelController::class, 'index']);
@@ -127,4 +128,16 @@ Route::group(['prefix' => 'stok'], function () {
     Route::get('/{id}/edit', [StokController::class, 'edit']);
     Route::post('/{id}', [StokController::class, 'update']);
     Route::delete('/{id}', [StokController::class, 'destroy']);
+});
+
+//penjualan
+Route::group(['prefix' => 'penjualan'], function () {
+    Route::get('/', [PenjualanController::class, 'index']);
+    Route::post('/list', [PenjualanController::class, 'list']);
+    Route::get('/create', [PenjualanController::class, 'create']);
+    Route::post('/', [PenjualanController::class, 'store']);
+    Route::get('/{id}', [PenjualanController::class, 'show']);
+    Route::get('/{id}/edit', [PenjualanController::class, 'edit']);
+    Route::post('/{id}', [PenjualanController::class, 'update'])->name('penjualan.update');
+    Route::delete('/{id}', [PenjualanController::class, 'destroy']);
 });
