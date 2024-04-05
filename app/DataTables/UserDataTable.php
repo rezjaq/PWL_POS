@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\UserModel;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\LevelModel;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
@@ -20,30 +21,35 @@ class UserDataTable extends DataTable
      *
      * @param QueryBuilder $query Results from query() method.
      */
-    public function dataTable(QueryBuilder $query): EloquentDataTable
+    public function dataTable($query)
     {
-        return (new EloquentDataTable($query))
-            ->addColumn('action', function ($data) {
-                return '<div class="d-flex gap-1">
-                        <a href="' . route('user.edit', $data->user_id) . '" class="btn btn-warning" style="width: 40px; height: 40px;">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <form action="' . route('user.destroy', $data->user_id) . '" method="POST" style="display: inline;">
-                            ' . csrf_field() . '
-                            ' . method_field('DELETE') . '
-                            <button type="submit" class="btn btn-danger" style="width: 40px; height: 40px;"><i class="fas fa-trash"></i></button>
-                        </form>
-                    </div>';
-            })
-            ->setRowId('id');
+        return datatables()
+            ->eloquent($query)
+            ->addColumn('action', function ($user) {
+                return '
+                    <a href="' . route('user.show', $user->id) . '" class="btn btn-info btn-sm">
+                        <i class="fa fa-eye"></i> Show
+                    </a>
+                    <a href="' . route('user.edit', $user->id) . '" class="btn btn-primary btn-sm">
+                        <i class="fa fa-edit"></i> Edit
+                    </a>
+                    <form action="' . route('user.destroy', $user->id) . '" method="POST" style="display: inline;">
+                        ' . csrf_field() . '
+                        ' . method_field('DELETE') . '
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Are you sure?\')">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </form>
+                ';
+            });
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(UserModel $model): QueryBuilder
+    public function query(UserModel $model): Builder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('level');
     }
 
     /**

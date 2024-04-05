@@ -35,14 +35,14 @@
 @push('js')
 <script>
     $(document).ready(function() {
-        var dataLevel = $('#table_kategori').DataTable({
+        var dataKategori = $('#table_kategori').DataTable({
             serverSide: true,
             ajax: {
                 "url": "{{ url('kategori/list') }}",
                 "dataType": "json",
                 "type": "POST",
                 "data": function(d){
-                    d.level_id = $('#level_id').val();
+                    d.kategori_id = $('#kategori_id').val();
                 }
             },
             columns: [
@@ -73,8 +73,8 @@
             ]
         });
 
-        $('#level_id').on('change', function(){
-            dataLevel.ajax.reload(); // Mengubah dari dataUser menjadi dataLevel
+        $('#kategori_id').on('change', function(){
+            dataKategori.ajax.reload(); // Mengubah dari dataUser menjadi dataLevel
         });
     });
 </script>

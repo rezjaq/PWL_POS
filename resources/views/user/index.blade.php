@@ -166,6 +166,7 @@
                     data: "nama",
                     className: "",
                     orderable: true,
+                    searchable: true
                 },{
                     data: "level.level_nama",
                     className: "",

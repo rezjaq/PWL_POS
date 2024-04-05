@@ -49,7 +49,7 @@
             <div class="form-group">
                 <label class="control-label">Barang:</label><br>
                 <div class="row">
-                    @foreach($barangs as $barang)
+                    @foreach($barang as $barang)
                         <div class="col-md-3">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input barang-checkbox" type="checkbox" id="barang_{{ $barang->barang_id }}" name="barang[{{ $barang->barang_id }}][id]" value="{{ $barang->barang_id }}">
