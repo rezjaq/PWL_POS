@@ -74,6 +74,7 @@ use Monolog\Level;
 //Laravel Starter Code
 // user
 Route::get('/', [WelcomeController::class, 'index']);
+
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
     Route::post('/list', [UserController::class, 'list'])->name('user.list');
