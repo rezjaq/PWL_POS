@@ -11,6 +11,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\Api\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Level;
 
@@ -166,5 +167,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('manager', ManagerController::class);
     });
 });
+
+
 
 
