@@ -12,6 +12,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Level;
 
@@ -167,6 +168,14 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('manager', ManagerController::class);
     });
 });
+
+
+Route::get('/file-upload', [FileUploadController::class, 'fileUpload']);
+Route::post('/file-upload', [FileUploadController::class, 'prosesFileUpload']);
+
+//tugas file upload
+Route::get('/tugas-file-upload', [FileUploadController::class, 'tugasFileUpload']);
+Route::post('/tugas-file-upload', [FileUploadController::class, 'TugasProsesFileUpload']);
 
 
 
